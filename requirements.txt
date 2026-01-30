@@ -1,0 +1,48 @@
+# C-TRUST Clinical Trial Risk & Uncertainty Surveillance Tool
+# Python Dependencies
+
+# Core Framework
+fastapi
+uvicorn
+pydantic
+
+# Data Processing
+pandas
+numpy
+openpyxl
+xlrd
+
+# AI/ML
+groq
+langchain-groq
+openai
+anthropic
+langchain
+langchain-openai
+
+# Testing
+pytest
+pytest-cov
+pytest-asyncio
+hypothesis
+
+# Utilities
+python-dotenv
+pyyaml
+requests
+httpx
+
+# Database
+sqlalchemy
+alembic
+
+# Logging
+loguru
+
+# Date/Time
+python-dateutil
+
+# Type Checking
+mypy
+types-requests
+types-pyyaml

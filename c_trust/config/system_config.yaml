@@ -1,0 +1,228 @@
+# C-TRUST System Configuration
+# Version: 1.0.0
+# This file contains all system configuration parameters
+
+_version: "1.0.0"
+
+# Database Configuration
+database:
+  url: "sqlite:///c_trust.db"
+  pool_size: 10
+  max_overflow: 20
+  echo: false
+
+# Processing Configuration
+processing:
+  batch_size: 1000
+  max_concurrent_jobs: 4
+  timeout_minutes: 30
+  retry_attempts: 3
+  retry_delay_seconds: 5
+
+# Agent Configuration
+agents:
+  data_completeness:
+    name: "Data Completeness"
+    weight: 1.5
+    enabled: true
+    abstention_threshold: 0.3
+    description: "Monitors data completeness and missing values"
+  
+  safety_compliance:
+    name: "Safety & Compliance"
+    weight: 3.0
+    enabled: true
+    abstention_threshold: 0.2
+    description: "Critical safety and regulatory compliance monitoring"
+  
+  query_quality:
+    name: "Query Quality"
+    weight: 1.5
+    enabled: true
+    abstention_threshold: 0.3
+    description: "Data query resolution and quality assessment"
+  
+  coding_readiness:
+    name: "Coding Readiness"
+    weight: 1.2
+    enabled: true
+    abstention_threshold: 0.3
+    description: "MedDRA and WHODrug coding completion status"
+  
+  stability:
+    name: "Stability"
+    weight: -1.5
+    enabled: true
+    abstention_threshold: 0.4
+    description: "Negative evidence agent for improvement detection"
+  
+  temporal_drift:
+    name: "Temporal Drift"
+    weight: 1.2
+    enabled: true
+    abstention_threshold: 0.3
+    description: "Temporal trend analysis and drift detection"
+  
+  cross_evidence:
+    name: "Cross Evidence"
+    weight: 1.0
+    enabled: true
+    abstention_threshold: 0.3
+    description: "Cross-validation of evidence across agents"
+
+# Data Quality Index Configuration
+dqi:
+  weights:
+    safety: 0.35
+    compliance: 0.25
+    completeness: 0.20
+    operations: 0.15
+  
+  bands:
+    GREEN:
+      min: 85
+      max: 100
+      description: "Analysis-ready data"
+    AMBER:
+      min: 65
+      max: 84
+      description: "Minor issues present"
+    ORANGE:
+      min: 40
+      max: 64
+      description: "Attention needed"
+    RED:
+      min: 0
+      max: 39
+      description: "Not submission-ready"
+  
+  thresholds:
+    critical: 40
+    high: 65
+    medium: 85
+
+# Guardian Agent Configuration
+guardian:
+  enabled: true
+  sensitivity: 0.1
+  check_interval_hours: 6
+  data_delta_threshold: 0.15
+  output_consistency_threshold: 0.2
+  staleness_detection_hours: 24
+  notification_roles:
+    - "system_administrator"
+    - "data_governance"
+
+# Dashboard Configuration
+dashboard:
+  port: 8501
+  host: "localhost"
+  title: "C-TRUST Clinical AI System"
+  theme: "light"
+  auto_refresh_seconds: 300
+  max_export_rows: 10000
+
+# Logging Configuration
+logging:
+  level: "INFO"
+  file: "c_trust.log"
+  max_file_size_mb: 10
+  backup_count: 5
+  format: "[%(asctime)s] %(levelname)-8s | %(name)-20s | %(message)s"
+
+# Security Configuration
+security:
+  session_timeout_minutes: 60
+  max_login_attempts: 3
+  password_min_length: 8
+  require_mfa: false
+
+# Notification Configuration
+notifications:
+  email:
+    enabled: false
+    smtp_server: ""
+    smtp_port: 587
+    username: ""
+    password: ""
+  
+  roles:
+    CRA:
+      focus_areas:
+        - "site_operations"
+        - "data_completeness"
+        - "visit_compliance"
+    
+    DATA_MANAGER:
+      focus_areas:
+        - "coding_readiness"
+        - "query_resolution"
+        - "submission_readiness"
+    
+    STUDY_LEAD:
+      focus_areas:
+        - "executive_summary"
+        - "escalations"
+        - "risk_overview"
+
+# Data Source Configuration
+data_sources:
+  supported_types:
+    - "edc_metrics"
+    - "visit_projection"
+    - "missing_pages"
+    - "missing_lab"
+    - "sae_dm"
+    - "sae_safety"
+    - "inactivated"
+    - "edrr"
+    - "meddra"
+    - "whodd"
+  
+  file_patterns:
+    edc_metrics: 
+      - "*CPID_EDC*Metrics*.xlsx"
+      - "*Standard*Metrics*.xlsx"
+    visit_projection: 
+      - "*Visit*Projection*.xlsx"
+      - "*Missing*visit*.xlsx"
+    missing_pages: 
+      - "*Missing*Page*.xlsx"
+    missing_lab: 
+      - "*Missing*Lab*.xlsx"
+      - "*Missing*LNR*.xlsx"
+    sae_dm: 
+      - "*eSAE*.xlsx"
+      - "*SAE*Dashboard*.xlsx"
+    sae_safety: 
+      - "*SAE*Safety*.xlsx"
+    inactivated: 
+      - "*Inactivated*.xlsx"
+    edrr: 
+      - "*EDRR*.xlsx"
+    meddra: 
+      - "*MedDRA*.xlsx"
+      - "*Medra*.xlsx"
+      - "*MedRA*.xlsx"
+    whodd: 
+      - "*WHODD*.xlsx"
+      - "*WHOdra*.xlsx"
+      - "*whoDrug*.xlsx"
+      - "*WHODrug*.xlsx"
+
+# Performance Configuration
+performance:
+  cache_enabled: true
+  cache_ttl_seconds: 3600
+  max_memory_usage_mb: 2048
+  parallel_processing: true
+  max_workers: 4
+
+# Feature Flags
+features:
+  guardian_agent: true
+  real_time_updates: false
+  collaboration_mode: true
+  advanced_analytics: true
+  export_functionality: true
+  audit_trail: true

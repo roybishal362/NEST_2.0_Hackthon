@@ -1,0 +1,147 @@
+# Python
+__pycache__/
+*.pyc
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environments
+.venv/
+venv/
+ENV/
+env/
+.virtualenv/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Testing
+.pytest_cache/
+.hypothesis/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+*.cover
+.cache
+nosetests.xml
+coverage.xml
+*.log
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Cache
+.cache/
+*.cache
+data_cache.json
+
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+.pnp/
+.pnp.js
+
+# Build outputs
+dist/
+build/
+*.min.js
+*.min.css
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.swp
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Generated files
+*.csv
+*.json.bak
+diagnostic_*.json
+*_output.txt
+*_report.txt
+*_results.json
+
+# Exports and predictions (keep folders, ignore contents)
+c_trust/exports/*
+!c_trust/exports/.gitkeep
+c_trust/predictions/*
+!c_trust/predictions/.gitkeep
+
+# Development artifacts
+test_*.py
+!c_trust/tests/**/test_*.py
+diagnose_*.py
+debug_*.py
+analyze_*.py
+validate_*.py
+verify_*.py
+fix_*.py
+
+# Documentation artifacts (development only)
+TASK_*.md
+PHASE_*.md
+*_COMPLETE.md
+*_FIX_*.md
+*_SUMMARY.md
+QUICK_START_*.md
+
+# Kiro AI specs (development only)
+.kiro/
+
+# Old versions
+round_2_*/
+kiro_things/
+system_architecture/
+
+# Presentation files (keep only in submission/)
+*.pptx
+*.pdf
+!submission/*.pdf
+PPT/
+Slides/
+new-slide/

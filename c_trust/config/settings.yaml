@@ -1,0 +1,312 @@
+# ========================================
+# C-TRUST SYSTEM CONFIGURATION
+# Production-ready YAML configuration for clinical trial operational intelligence
+# ========================================
+
+system:
+  name: "C-TRUST"
+  version: "1.0.0"
+  description: "Clinical Trial Unified Signal & Trust - Operational Intelligence System"
+  
+# ========================================
+# DATA QUALITY INDEX (DQI) CONFIGURATION
+# ========================================
+dqi:
+  # Dimension weights (must sum to 1.0)
+  dimensions:
+    safety:
+      weight: 0.35
+      description: "Serious Adverse Events, safety signal detection"
+      features:
+        - "sae_backlog_days"
+        - "sae_overdue_count"
+        - "safety_query_aging"
+    
+    compliance:
+      weight: 0.25
+      description: "Protocol adherence, regulatory compliance"
+      features:
+        - "protocol_deviation_rate"
+        - "missing_lab_ranges_pct"
+        - "inactivated_form_pct"
+    
+    completeness:
+      weight: 0.25
+      description: "Data completeness, missing information"
+      features:
+        - "missing_pages_pct"
+        - "visit_completion_rate"
+        - "uncoded_meddra_pct"
+    
+    operations:
+      weight: 0.15
+      description: "Operational efficiency, query management"
+      features:
+        - "query_aging_days"
+        - "data_entry_lag_days"
+        - "edc_metric_score"
+  
+  # Threshold definitions for alert levels
+  thresholds:
+    critical:
+      min: 0
+      max: 50
+      label: "Critical"
+      color: "#DC2626"  # Red
+      action_required: true
+    
+    high:
+      min: 50
+      max: 70
+      label: "High Risk"
+      color: "#F59E0B"  # Amber
+      action_required: true
+    
+    medium:
+      min: 70
+      max: 85
+      label: "At Risk"
+      color: "#FCD34D"  # Yellow
+      action_required: false
+    
+    low:
+      min: 85
+      max: 100
+      label: "On Track"
+      color: "#10B981"  # Green
+      action_required: false
+
+# ========================================
+# AGENT CONFIGURATION
+# ========================================
+agents:
+  # Agent voting weights (must sum to 1.0)
+  voting_weights:
+    safety: 0.30
+    completeness: 0.20
+    compliance: 0.20
+    operations: 0.15
+    coding: 0.10
+    timeline: 0.05
+  
+  # Individual agent configurations
+  safety_agent:
+    name: "Safety Signal Agent"
+    description: "Monitors serious adverse events and safety signals"
+    min_confidence: 0.6
+    critical_thresholds:
+      sae_backlog_days: 7
+      sae_overdue_count: 3
+  
+  completeness_agent:
+    name: "Data Completeness Agent"
+    description: "Tracks missing data and visit gaps"
+    min_confidence: 0.6
+    critical_thresholds:
+      missing_pages_pct: 10
+      visit_gap_days: 14
+  
+  compliance_agent:
+    name: "Regulatory Compliance Agent"
+    description: "Monitors protocol deviations and regulatory compliance"
+    min_confidence: 0.6
+    critical_thresholds:
+      protocol_deviation_rate: 0.05
+      missing_lab_ranges_pct: 15
+  
+  operations_agent:
+    name: "Operational Efficiency Agent"
+    description: "Tracks query aging and data entry performance"
+    min_confidence: 0.6
+    critical_thresholds:
+      query_aging_days: 30
+      data_entry_lag_days: 7
+  
+  coding_agent:
+    name: "Medical Coding Agent"
+    description: "Monitors MedDRA and WHODD coding backlogs"
+    min_confidence: 0.6
+    critical_thresholds:
+      uncoded_meddra_pct: 5
+      uncoded_whodd_pct: 5
+  
+  timeline_agent:
+    name: "Timeline & Milestone Agent"
+    description: "Tracks visit projections and study milestones"
+    min_confidence: 0.6
+    critical_thresholds:
+      enrollment_lag_pct: 20
+      visit_delay_days: 21
+  
+  # Consensus engine settings
+  consensus:
+    min_agent_agreement: 0.6
+    abstention_threshold: 0.5
+    stability_suppression:
+      enabled: true
+      min_clean_snapshots: 3
+
+# ========================================
+# FILE TYPE MAPPINGS
+# ========================================
+file_types:
+  edc_metrics:
+    pattern: "*CPID_EDC_Metrics*.xlsx"
+    semantic_role: "core_health_summary"
+    required: true
+    
+  visit_projection:
+    pattern: "*Visit*Projection*Tracker*.xlsx"
+    semantic_role: "time_risk_amplifier"
+    required: true
+  
+  missing_pages:
+    pattern: "*Missing_Pages*.xlsx"
+    semantic_role: "root_cause_locator"
+    required: true
+  
+  missing_lab:
+    pattern: "*Missing_Lab*.xlsx"
+    semantic_role: "compliance_gap_detector"
+    required: false
+  
+  sae_dm:
+    pattern: "*eSAE*DM*.xlsx"
+    semantic_role: "critical_risk_signal"
+    required: true
+  
+  sae_safety:
+    pattern: "*eSAE*Safety*.xlsx"
+    semantic_role: "critical_risk_signal"
+    required: false
+  
+  inactivated:
+    pattern: "*Inactivated*.xlsx"
+    semantic_role: "data_stability_signal"
+    required: false
+  
+  edrr:
+    pattern: "*EDRR*.xlsx"
+    semantic_role: "external_reconciliation"
+    required: true
+  
+  meddra:
+    pattern: "*MedDRA*.xlsx"
+    semantic_role: "submission_readiness"
+    required: true
+  
+  whodd:
+    pattern: "*WHODD*.xlsx"
+    semantic_role: "submission_readiness"
+    required: true
+
+# ========================================
+# GUARDIAN ENGINE CONFIGURATION
+# ========================================
+guardian:
+  enabled: true
+  check_interval_hours: 6
+  
+  # Drift detection thresholds
+  drift_detection:
+    dqi_drift_threshold: 0.15
+    feature_drift_threshold: 0.20
+    prediction_drift_threshold: 0.25
+  
+  # Integrity checks
+  integrity_checks:
+    - "data_completeness"
+    - "schema_consistency"
+    - "temporal_coherence"
+    - "agent_performance"
+
+# ========================================
+# GENAI CONFIGURATION
+# ========================================
+genai:
+  provider: "groq"
+  model: "llama-3.3-70b-versatile"
+  temperature: 0.1
+  max_tokens: 2048
+  
+  # Template-grounded prompting
+  templates:
+    dqi_explanation:
+      system_prompt: "You are a clinical data quality expert. Explain DQI scores using only the provided evidence. Be concise and actionable."
+      max_evidence_items: 10
+    
+    risk_explanation:
+      system_prompt: "You are a clinical operations expert. Explain risk drivers using only the provided signals. Focus on actionable insights."
+      max_evidence_items: 8
+    
+    alert_summary:
+      system_prompt: "You are a clinical trial coordinator. Summarize alerts for busy stakeholders. Be brief and prioritize by urgency."
+      max_evidence_items: 5
+
+# ========================================
+# COLLABORATION SETTINGS
+# ========================================
+collaboration:
+  alerts:
+    auto_create_on_critical: true
+    auto_assign: true
+    sla_hours:
+      critical: 4
+      high: 24
+      medium: 72
+  
+  tags:
+    predefined:
+      - "urgent"
+      - "followup-required"
+      - "resolved"
+      - "false-positive"
+      - "sae-related"
+      - "data-quality"
+  
+  action_items:
+    statuses:
+      - "open"
+      - "in_progress"
+      - "blocked"
+      - "completed"
+      - "cancelled"
+
+# ========================================
+# LOGGING CONFIGURATION
+# ========================================
+logging:
+  level: "INFO"
+  format: "json"
+  
+  handlers:
+    console:
+      enabled: true
+      level: "INFO"
+    
+    file:
+      enabled: true
+      level: "DEBUG"
+      path: "./logs/ctrust.log"
+      max_size_mb: 100
+      backup_count: 10
+    
+    audit:
+      enabled: true
+      path: "./logs/audit.log"
+      retention_days: 365
+
+# ========================================
+# PERFORMANCE SETTINGS
+# ========================================
+performance:
+  batch_size: 10
+  max_workers: 4
+  cache_ttl_seconds: 300
+  snapshot_retention_days: 90
+  
+  # Database connection pooling
+  db_pool:
+    min_size: 5
+    max_size: 20
+    max_overflow: 10
