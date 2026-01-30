@@ -1,4 +1,4 @@
-# C-TRUST: Clinical Trial Risk & Uncertainty Surveillance Tool
+# C-TRUST
 
 ## 🎯 Overview
 
