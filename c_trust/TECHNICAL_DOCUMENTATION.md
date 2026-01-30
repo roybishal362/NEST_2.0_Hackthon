@@ -2576,8 +2576,8 @@ function StudyDashboard({ studyId }: { studyId: string }) {
 
 **Support**:
 - **Email**: roybishal9989@gmail.com
-- **Documentation**: 
-- **Issue Tracker**: 
+- **Documentation**: https://github.com/roybishal362/NEST_2.0_Hackthon/edit/main/c_trust/TECHNICAL_DOCUMENTATION.md
+- **Issue Tracker**: https://github.com/roybishal362/NEST_2.0_Hackthon/tree/main
 ---
 
 ## Document Version History
