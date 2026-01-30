@@ -228,7 +228,7 @@ DATA_ROOT_PATH=e:/novaryis/norvatas/Data for problem Statement 1/NEST 2.0 Data f
 
 # API Configuration
 API_HOST=0.0.0.0
-API_PORT=8001
+API_PORT=8000
 CORS_ORIGINS=http://localhost:3000,http://localhost:5173
 
 # Groq API (Optional - for AI Insights)
@@ -326,12 +326,12 @@ cd c_trust
 source .venv/bin/activate
 
 # Start FastAPI server
-python -m uvicorn src.api.main:app --reload --port 8001
+python -m uvicorn src.api.main:app --reload --port 8000
 ```
 
 **Expected output**:
 ```
-INFO:     Uvicorn running on http://127.0.0.1:8001 (Press CTRL+C to quit)
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
 INFO:     Started reloader process
 INFO:     Started server process
 INFO:     Waiting for application startup.
@@ -339,9 +339,9 @@ INFO:     Application startup complete.
 ```
 
 **Verify backend is running**:
-- API: http://localhost:8001
-- API Docs: http://localhost:8001/api/docs (interactive Swagger UI)
-- Health Check: http://localhost:8001/api/v1/health
+- API: http://localhost:8000
+- API Docs: http://localhost:8000/api/docs (interactive Swagger UI)
+- Health Check: http://localhost:8000/api/v1/health
 
 #### Generating Cache
 
@@ -556,7 +556,7 @@ DATA_ROOT_PATH=path/to/NEST 2.0 Data files_Anonymized/QC Anonymized Study Files
 ```env
 # API Server
 API_HOST=0.0.0.0
-API_PORT=8001
+API_PORT=8000
 API_PREFIX=/api/v1
 
 # CORS (for frontend access)
@@ -679,7 +679,7 @@ Frontend configuration in `frontend/.env`:
 
 ```env
 # API Endpoint
-VITE_API_BASE_URL=http://localhost:8001
+VITE_API_BASE_URL=http://localhost:8000
 
 # Feature Flags
 VITE_ENABLE_AI_INSIGHTS=true
@@ -737,19 +737,19 @@ LOG_LEVEL=INFO  # Options: DEBUG, INFO, WARNING, ERROR, CRITICAL
 cd c_trust
 
 # Use the correct command
-python -m uvicorn src.api.main:app --reload --port 8001
+python -m uvicorn src.api.main:app --reload --port 8000
 
 # NOT: python src/api/main.py
 ```
 
-##### Issue: "Port 8001 already in use"
+##### Issue: "Port 8000 already in use"
 
-**Cause**: Another process is using port 8001.
+**Cause**: Another process is using port 8000.
 
 **Solution (Windows)**:
 ```powershell
-# Find process using port 8001
-netstat -ano | findstr :8001
+# Find process using port 8000
+netstat -ano | findstr :8000
 
 # Kill the process (replace <PID> with actual process ID)
 taskkill /PID <PID> /F
@@ -758,7 +758,7 @@ taskkill /PID <PID> /F
 **Solution (macOS/Linux)**:
 ```bash
 # Find and kill process
-lsof -ti:8001 | xargs kill -9
+lsof -ti:8000 | xargs kill -9
 ```
 
 ##### Issue: "FileNotFoundError: NEST 2.0 data not found"
@@ -830,7 +830,7 @@ lsof -ti:5173 | xargs kill -9
 **Cause**: Backend not running or CORS issue.
 
 **Solutions**:
-1. **Verify backend is running**: Open http://localhost:8001/api/docs
+1. **Verify backend is running**: Open http://localhost:8000/api/docs
 2. **Check CORS settings**: Ensure `.env` has `CORS_ORIGINS=http://localhost:5173`
 3. **Check browser console**: Look for CORS or network errors
 4. **Hard refresh**: Press Ctrl+F5 (Windows) or Cmd+Shift+R (Mac)
@@ -840,8 +840,8 @@ lsof -ti:5173 | xargs kill -9
 **Cause**: Backend not running or wrong API URL.
 
 **Solution**:
-1. Verify backend is running: `curl http://localhost:8001/api/v1/health`
-2. Check frontend `.env`: `VITE_API_BASE_URL=http://localhost:8001`
+1. Verify backend is running: `curl http://localhost:8000/api/v1/health`
+2. Check frontend `.env`: `VITE_API_BASE_URL=http://localhost:8000`
 3. Restart frontend after changing `.env`
 
 ##### Issue: AI Insights page shows "No insights available"
@@ -916,7 +916,7 @@ If you encounter issues not covered here:
 
 1. **Check logs**: `logs/c_trust.log` contains detailed error messages
 2. **Enable debug mode**: Set `DEBUG=true` in `.env` for verbose logging
-3. **Review API docs**: http://localhost:8001/api/docs for endpoint details
+3. **Review API docs**: http://localhost:8000/api/docs for endpoint details
 4. **Check GitHub issues**: Search for similar problems
 5. **Contact support**: Provide logs and error messages
 
@@ -926,19 +926,19 @@ Test your setup with these commands:
 
 ```bash
 # Backend health check
-curl http://localhost:8001/api/v1/health
+curl http://localhost:8000/api/v1/health
 
 # List studies
-curl http://localhost:8001/api/v1/studies
+curl http://localhost:8000/api/v1/studies
 
 # Get study details
-curl http://localhost:8001/api/v1/studies/STUDY_01
+curl http://localhost:8000/api/v1/studies/STUDY_01
 
 # Check agent status
-curl http://localhost:8001/api/v1/agents
+curl http://localhost:8000/api/v1/agents
 
 # Guardian status
-curl http://localhost:8001/api/v1/guardian/status
+curl http://localhost:8000/api/v1/guardian/status
 ```
 
 
@@ -1154,7 +1154,7 @@ LOG_LEVEL=DEBUG
 
 3. **Run with auto-reload**:
 ```bash
-python -m uvicorn src.api.main:app --reload --port 8001
+python -m uvicorn src.api.main:app --reload --port 8000
 ```
 
 #### Frontend Development
@@ -1380,7 +1380,7 @@ breakpoint()
         "src.api.main:app",
         "--reload",
         "--port",
-        "8001"
+        "8000"
       ],
       "jinja": true
     }
@@ -1527,8 +1527,8 @@ npm run build
 
 Once the backend is running, access interactive API documentation:
 
-- **Swagger UI**: http://localhost:8001/api/docs
-- **ReDoc**: http://localhost:8001/api/redoc
+- **Swagger UI**: http://localhost:8000/api/docs
+- **ReDoc**: http://localhost:8000/api/redoc
 
 ### Key Endpoints
 
@@ -1593,7 +1593,7 @@ POST /api/v1/export/study/{study_id}
 ```
 Export study data as CSV.
 
-For complete API documentation with request/response schemas, see http://localhost:8001/api/docs
+For complete API documentation with request/response schemas, see http://localhost:8000/api/docs
 
 ---
 
@@ -1720,7 +1720,7 @@ Special thanks to:
 For questions, issues, or feedback:
 - **Documentation**: See `docs/` directory
 - **Technical Issues**: Check `logs/` for error details
-- **API Questions**: See http://localhost:8001/api/docs
+- **API Questions**: See http://localhost:8000/api/docs
 
 ---
 
@@ -1733,7 +1733,7 @@ For questions, issues, or feedback:
 cd c_trust
 .venv\Scripts\activate  # Windows
 source .venv/bin/activate  # macOS/Linux
-python -m uvicorn src.api.main:app --reload --port 8001
+python -m uvicorn src.api.main:app --reload --port 8000
 
 # Frontend
 cd frontend
@@ -1747,15 +1747,15 @@ pytest
 npm test
 
 # Check health
-curl http://localhost:8001/api/v1/health
+curl http://localhost:8000/api/v1/health
 ```
 
 ### Essential URLs
 
 - **Frontend**: http://localhost:5173
-- **Backend API**: http://localhost:8001
-- **API Docs**: http://localhost:8001/api/docs
-- **Health Check**: http://localhost:8001/api/v1/health
+- **Backend API**: http://localhost:8000
+- **API Docs**: http://localhost:8000/api/docs
+- **Health Check**: http://localhost:8000/api/v1/health
 
 ### Essential Files
 
@@ -1772,7 +1772,7 @@ curl http://localhost:8001/api/v1/health
 After getting C-TRUST running:
 
 1. **Explore the Dashboard**: Navigate through all pages to understand the UI
-2. **Review API Documentation**: Visit http://localhost:8001/api/docs
+2. **Review API Documentation**: Visit http://localhost:8000/api/docs
 3. **Check Logs**: Review `logs/c_trust.log` to understand system behavior
 4. **Read Technical Documentation**: See `TECHNICAL_DOCUMENTATION.md` for deep dive
 5. **Run Tests**: Execute `pytest` to verify system integrity
