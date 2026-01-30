@@ -2566,17 +2566,19 @@ function StudyDashboard({ studyId }: { studyId: string }) {
 
 ### 12.5 Contact Information
 
-**Development Team**:
-- **Project Lead**: [Name]
-- **Backend Lead**: [Name]
-- **Frontend Lead**: [Name]
-- **QA Lead**: [Name]
+
+
+**Development Team**: **Nexus Four**
+- **Project Lead**: Bishal Roy
+- **Backend Lead**: Bishal Roy
+- **Frontend Lead**: Deepak Dey
+- **QA Lead**: Ajay Mallick
+- **Business Lead**: Chandni 
 
 **Support**:
-- **Email**: support@c-trust.example.com
-- **Documentation**: https://docs.c-trust.example.com
-- **Issue Tracker**: https://github.com/c-trust/issues
-
+- **Email**: roybishal9989@gmail.com
+- **Documentation**: 
+- **Issue Tracker**: 
 ---
 
 ## Document Version History
