@@ -2,12 +2,6 @@
 
 Thank you for your interest in contributing to C-TRUST! This document provides guidelines for contributing to the project.
 
-## Code of Conduct
-
-- Be respectful and inclusive
-- Focus on constructive feedback
-- Help maintain a positive environment
-
 ## Getting Started
 
 1. Fork the repository
