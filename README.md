@@ -70,7 +70,7 @@ cp .env.example .env
 # Edit .env and add your GROQ_API_KEY
 
 # Run the backend
-python main.py
+python -m uvicorn src.api.main:app --reload --port 8000
 ```
 
 ### Frontend Setup
