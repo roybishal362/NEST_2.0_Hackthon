@@ -25,7 +25,7 @@ Get your free API key at: https://console.groq.com/keys
 ### 1. Clone the Repository
 
 ```bash
-git clone <repository-url>
+git clone <https://github.com/roybishal362/NEST_2.0_Hackthon/tree/main>
 cd c-trust
 ```
 
