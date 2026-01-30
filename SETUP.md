@@ -130,7 +130,7 @@ npm list react typescript
 
 ```bash
 cd c_trust
-python main.py
+python -m uvicorn src.api.main:app --reload --port 8000
 ```
 
 The backend API will be available at:
