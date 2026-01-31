@@ -232,8 +232,4 @@ export function useMetrics() {
     });
 }
 
-// ========================================
-// EXPORT
-// ========================================
-
 export default useAnalysis;
