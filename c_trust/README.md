@@ -185,7 +185,7 @@ Before you begin, ensure you have:
 #### Step 1: Clone the Repository
 
 ```bash
-git clone @##################################
+git clone https://github.com/roybishal362/NEST_2.0_Hackthon/tree/main
 cd c_trust
 ```
 
