@@ -12,19 +12,19 @@
 
 ## 📋 Table of Contents
 
-- [What is C-TRUST?](#what-is-c-trust)
-- [Key Features](#key-features)
-- [System Requirements](#system-requirements)
-- [Quick Start](#quick-start)
-- [Running the System](#running-the-system)
-- [Usage Guide](#usage-guide)
-- [Configuration](#configuration)
-- [Troubleshooting](#troubleshooting)
-- [Project Structure](#project-structure)
-- [Development](#development)
-- [API Documentation](#api-documentation)
-- [Testing](#testing)
-- [License & Credits](#license--credits)
+- [What is C-TRUST?](#-what-is-c-trust)
+- [Key Features](#-key-features)
+- [System Requirements](#-system-requirements)
+- [Quick Start](#-quick-start)
+- [Running the System](#-running-the-system)
+- [Usage Guide](#-usage-guide)
+- [Configuration](#-configuration)
+- [Troubleshooting](#-troubleshooting)
+- [Project Structure](#-project-structure)
+- [Development](#-development)
+- [API Documentation](#-api-documentation)
+- [Testing](#-testing)
+- [License & Credits](#-license--credits)
 
 ---
 
@@ -185,7 +185,7 @@ Before you begin, ensure you have:
 #### Step 1: Clone the Repository
 
 ```bash
-git clone <repository-url>
+git clone @##################################
 cd c_trust
 ```
 
@@ -224,7 +224,7 @@ Create a `.env` file in the `c_trust` directory (or copy from `.env.example`):
 
 ```env
 # Data Source
-DATA_ROOT_PATH=e:/novaryis/norvatas/Data for problem Statement 1/NEST 2.0 Data files_Anonymized/QC Anonymized Study Files
+DATA_ROOT_PATH=..../Data for problem Statement 1/NEST 2.0 Data files_Anonymized/QC Anonymized Study Files
 
 # API Configuration
 API_HOST=0.0.0.0
@@ -267,7 +267,7 @@ The system includes a pre-generated `data_cache.json` file with analysis results
 #### Starting Frontend
 
 ```bash
-# Navigate to frontend directory
+# Navigate to frontend directory (Note: Check first that you are in c_trust directory)
 cd frontend
 
 # Start development server
@@ -366,7 +366,7 @@ This will:
 **Terminal 2** (Frontend):
 
 ```bash
-# Navigate to frontend directory
+# Navigate to frontend directory (Note: Check first that you are in c_trust directory)
 cd frontend
 
 # Start development server
