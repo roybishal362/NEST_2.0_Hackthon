@@ -94,10 +94,7 @@ async function fetchAPI<T>(endpoint: string, options?: RequestInit): Promise<T> 
     return response.json();
 }
 
-// ========================================
 // HOOKS
-// ========================================
-
 /**
  * useAnalysis - Fetch analysis for a study with real-time updates
  */
