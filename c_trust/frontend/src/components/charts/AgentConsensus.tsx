@@ -1,6 +1,4 @@
 // Agent Consensus Visualization Component
-// ========================================
-
 interface AgentSignal {
     name: string;
     signal: 'positive' | 'negative' | 'neutral';
@@ -43,7 +41,7 @@ export function AgentConsensus({ signals = defaultSignals }: AgentConsensusProps
         const signalValue = s.signal === 'positive' ? 1 : s.signal === 'negative' ? -1 : 0;
         return sum + (signalValue * s.confidence * Math.abs(s.weight));
     }, 0);
-    const consensusScore = ((weightedScore / totalWeight) + 1) / 2 * 100; // Normalize to 0-100
+    const consensusScore = ((weightedScore / totalWeight) + 1) / 2 * 100; 
 
     return (
         <div className="space-y-4">
