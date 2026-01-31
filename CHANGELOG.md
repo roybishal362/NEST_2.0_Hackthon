@@ -75,12 +75,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Documentation
 - README with quick start guide
-- Technical documentation (2592 lines)
-- Simple explanation for stakeholders (1775 lines)
-- Video presentation script
-- API documentation
+- Technical documentation 
 - Setup guide
-- Contributing guidelines
 - Code of conduct
 
 ### Testing
