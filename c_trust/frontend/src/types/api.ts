@@ -25,7 +25,6 @@ export interface Study {
     dqi_score: number | null;
     risk_level: RiskLevel | null;
     file_types_available: string[];
-    // Detailed fields
     sites?: SiteSummary[];
     timeline?: StudyTimeline;
     dimension_scores?: Record<string, any>;
