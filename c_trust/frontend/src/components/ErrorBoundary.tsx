@@ -36,14 +36,12 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
         console.error('ErrorBoundary caught an error:', error, errorInfo);
         this.setState({ errorInfo });
 
-        // Log to backend in production
         if (import.meta.env.PROD) {
             this.logErrorToBackend(error, errorInfo);
         }
     }
 
     private logErrorToBackend(error: Error, errorInfo: ErrorInfo): void {
-        // Could send to /api/v1/errors endpoint
         fetch('/api/v1/errors', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
