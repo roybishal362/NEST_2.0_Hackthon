@@ -10,9 +10,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Initial release for Novartis NEST 2.0 Hackathon
 - 7 specialized AI agents for clinical trial monitoring
-  - Enrollment Agent
-  - Protocol Deviation Agent
-  - Data Quality Agent
+  - Safety & Compliance Agent
+  - Data Completeness Agent
+  - Query Quality Agent
   - Temporal Drift Agent
   - Stability Agent
   - Coding Agent
