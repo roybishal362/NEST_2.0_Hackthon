@@ -1,6 +1,5 @@
 /**
  * Hooks Module Export
- * ===================
  */
 
 export {
