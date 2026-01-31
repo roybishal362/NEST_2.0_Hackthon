@@ -10,7 +10,6 @@ export function OfflineIndicator() {
     useEffect(() => {
         const handleOnline = () => {
             setIsOnline(true);
-            // Show "back online" message briefly
             setShowBanner(true);
             setTimeout(() => setShowBanner(false), 3000);
         };
