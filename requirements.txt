@@ -5,6 +5,7 @@
 fastapi
 uvicorn
 pydantic
+pydantic_settings
 
 # Data Processing
 pandas
