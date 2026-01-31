@@ -1,0 +1,41 @@
+study_id,entity_type,entity_id,flag_type,severity,description,recommended_action,generated_at
+STUDY_01,study,STUDY_01,data_quality,High,Study DQI score of 63.5 indicates high risk,Immediate review and remediation required,2026-01-28T11:29:18.816925
+STUDY_01,site,STUDY_01_SITE_01,missing_data,Medium,Site STUDY_01_SITE_01 has significant missing data fields,Contact site to complete missing data entry,2026-01-28T11:29:18.816925
+STUDY_01,site,STUDY_01_SITE_02,missing_data,Medium,Site STUDY_01_SITE_02 has significant missing data fields,Contact site to complete missing data entry,2026-01-28T11:29:18.816925
+STUDY_02,study,STUDY_02,monitoring,Medium,Study DQI score of 68.0 requires monitoring,Continue regular monitoring and address issues proactively,2026-01-28T11:29:18.816925
+STUDY_04,study,STUDY_04,data_quality,High,Study DQI score of 64.0 indicates high risk,Immediate review and remediation required,2026-01-28T11:29:18.816925
+STUDY_04,site,STUDY_04_SITE_01,query_overload,Medium,Site STUDY_04_SITE_01 has excessive open queries,Prioritize query resolution with site staff,2026-01-28T11:29:18.816925
+STUDY_04,site,STUDY_04_SITE_02,sae_reporting,Medium,Site STUDY_04_SITE_02 has delayed SAE reporting,Immediate follow-up on SAE reporting timeline,2026-01-28T11:29:18.816925
+STUDY_05,study,STUDY_05,data_quality,High,Study DQI score of 63.5 indicates high risk,Immediate review and remediation required,2026-01-28T11:29:18.816925
+STUDY_05,site,STUDY_05_SITE_01,missing_data,Medium,Site STUDY_05_SITE_01 has significant missing data fields,Contact site to complete missing data entry,2026-01-28T11:29:18.816925
+STUDY_05,site,STUDY_05_SITE_02,sae_reporting,Medium,Site STUDY_05_SITE_02 has delayed SAE reporting,Immediate follow-up on SAE reporting timeline,2026-01-28T11:29:18.816925
+STUDY_05,site,STUDY_05_SITE_03,query_overload,Medium,Site STUDY_05_SITE_03 has excessive open queries,Prioritize query resolution with site staff,2026-01-28T11:29:18.816925
+STUDY_06,study,STUDY_06,data_quality,High,Study DQI score of 63.5 indicates high risk,Immediate review and remediation required,2026-01-28T11:29:18.816925
+STUDY_06,site,STUDY_06_SITE_01,query_overload,Medium,Site STUDY_06_SITE_01 has excessive open queries,Prioritize query resolution with site staff,2026-01-28T11:29:18.816925
+STUDY_06,site,STUDY_06_SITE_02,missing_data,Medium,Site STUDY_06_SITE_02 has significant missing data fields,Contact site to complete missing data entry,2026-01-28T11:29:18.816925
+STUDY_06,site,STUDY_06_SITE_03,protocol_deviation,Medium,Site STUDY_06_SITE_03 has multiple protocol deviations,Schedule protocol training session,2026-01-28T11:29:18.816925
+STUDY_07,study,STUDY_07,data_quality,High,Study DQI score of 63.5 indicates high risk,Immediate review and remediation required,2026-01-28T11:29:18.816925
+STUDY_07,site,STUDY_07_SITE_01,missing_data,Medium,Site STUDY_07_SITE_01 has significant missing data fields,Contact site to complete missing data entry,2026-01-28T11:29:18.816925
+STUDY_07,site,STUDY_07_SITE_02,missing_data,Medium,Site STUDY_07_SITE_02 has significant missing data fields,Contact site to complete missing data entry,2026-01-28T11:29:18.816925
+STUDY_08,study,STUDY_08,monitoring,Medium,Study DQI score of 74.3 requires monitoring,Continue regular monitoring and address issues proactively,2026-01-28T11:29:18.816925
+STUDY_09,study,STUDY_09,monitoring,Medium,Study DQI score of 68.0 requires monitoring,Continue regular monitoring and address issues proactively,2026-01-28T11:29:18.816925
+STUDY_10,study,STUDY_10,monitoring,Medium,Study DQI score of 70.5 requires monitoring,Continue regular monitoring and address issues proactively,2026-01-28T11:29:18.816925
+STUDY_13,study,STUDY_13,monitoring,Medium,Study DQI score of 73.1 requires monitoring,Continue regular monitoring and address issues proactively,2026-01-28T11:29:18.816925
+STUDY_14,study,STUDY_14,monitoring,Medium,Study DQI score of 74.7 requires monitoring,Continue regular monitoring and address issues proactively,2026-01-28T11:29:18.816925
+STUDY_15,study,STUDY_15,monitoring,Medium,Study DQI score of 73.8 requires monitoring,Continue regular monitoring and address issues proactively,2026-01-28T11:29:18.816925
+STUDY_16,study,STUDY_16,data_quality,High,Study DQI score of 63.5 indicates high risk,Immediate review and remediation required,2026-01-28T11:29:18.816925
+STUDY_16,site,STUDY_16_SITE_01,missing_data,Medium,Site STUDY_16_SITE_01 has significant missing data fields,Contact site to complete missing data entry,2026-01-28T11:29:18.816925
+STUDY_16,site,STUDY_16_SITE_02,missing_data,Medium,Site STUDY_16_SITE_02 has significant missing data fields,Contact site to complete missing data entry,2026-01-28T11:29:18.816925
+STUDY_16,site,STUDY_16_SITE_03,protocol_deviation,Medium,Site STUDY_16_SITE_03 has multiple protocol deviations,Schedule protocol training session,2026-01-28T11:29:18.816925
+STUDY_17,study,STUDY_17,data_quality,High,Study DQI score of 63.5 indicates high risk,Immediate review and remediation required,2026-01-28T11:29:18.816925
+STUDY_17,site,STUDY_17_SITE_01,query_overload,Medium,Site STUDY_17_SITE_01 has excessive open queries,Prioritize query resolution with site staff,2026-01-28T11:29:18.816925
+STUDY_17,site,STUDY_17_SITE_02,missing_data,Medium,Site STUDY_17_SITE_02 has significant missing data fields,Contact site to complete missing data entry,2026-01-28T11:29:18.816925
+STUDY_18,study,STUDY_18,monitoring,Medium,Study DQI score of 70.5 requires monitoring,Continue regular monitoring and address issues proactively,2026-01-28T11:29:18.820348
+STUDY_19,study,STUDY_19,monitoring,Medium,Study DQI score of 70.5 requires monitoring,Continue regular monitoring and address issues proactively,2026-01-28T11:29:18.820348
+STUDY_20,study,STUDY_20,monitoring,Medium,Study DQI score of 71.8 requires monitoring,Continue regular monitoring and address issues proactively,2026-01-28T11:29:18.820348
+STUDY_21,study,STUDY_21,monitoring,Medium,Study DQI score of 70.5 requires monitoring,Continue regular monitoring and address issues proactively,2026-01-28T11:29:18.820348
+STUDY_23,study,STUDY_23,monitoring,Medium,Study DQI score of 70.5 requires monitoring,Continue regular monitoring and address issues proactively,2026-01-28T11:29:18.820348
+STUDY_24,study,STUDY_24,data_quality,High,Study DQI score of 63.5 indicates high risk,Immediate review and remediation required,2026-01-28T11:29:18.820348
+STUDY_24,site,STUDY_24_SITE_01,protocol_deviation,Medium,Site STUDY_24_SITE_01 has multiple protocol deviations,Schedule protocol training session,2026-01-28T11:29:18.820348
+STUDY_24,site,STUDY_24_SITE_02,sae_reporting,Medium,Site STUDY_24_SITE_02 has delayed SAE reporting,Immediate follow-up on SAE reporting timeline,2026-01-28T11:29:18.820348
+STUDY_25,study,STUDY_25,monitoring,Medium,Study DQI score of 65.7 requires monitoring,Continue regular monitoring and address issues proactively,2026-01-28T11:29:18.820348

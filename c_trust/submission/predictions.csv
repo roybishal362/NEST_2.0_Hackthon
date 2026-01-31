@@ -1,0 +1,24 @@
+study_id,dqi_score,risk_level,risk_score,confidence,agent_signals,recommendation
+STUDY_01,63.5,High,36.5,0.75,"safety:medium,compliance:low,completeness:critical,operations:medium",Significant data quality issues - Review and remediation needed
+STUDY_02,68.0,High,32.0,0.75,"safety:medium,compliance:low,completeness:critical,operations:low",Minor data quality issues - Monitor and address
+STUDY_04,64.0,High,36.0,0.75,"safety:medium,compliance:low,completeness:critical,operations:medium",Significant data quality issues - Review and remediation needed
+STUDY_05,63.5,High,36.5,0.75,"safety:medium,compliance:low,completeness:critical,operations:medium",Significant data quality issues - Review and remediation needed
+STUDY_06,63.5,High,36.5,0.75,"safety:medium,compliance:low,completeness:critical,operations:medium",Significant data quality issues - Review and remediation needed
+STUDY_07,63.5,High,36.5,0.75,"safety:medium,compliance:low,completeness:critical,operations:medium",Significant data quality issues - Review and remediation needed
+STUDY_08,74.3,Medium,25.7,0.75,"safety:low,compliance:low,completeness:critical,operations:low",Minor data quality issues - Monitor and address
+STUDY_09,68.0,High,32.0,0.75,"safety:medium,compliance:low,completeness:critical,operations:low",Minor data quality issues - Monitor and address
+STUDY_10,70.5,Medium,29.5,0.75,"safety:low,compliance:low,completeness:critical,operations:medium",Minor data quality issues - Monitor and address
+STUDY_11,100.0,Low,0.0,0.75,"safety:low,compliance:low,completeness:low,operations:low",Data quality acceptable - Continue monitoring
+STUDY_13,73.1,Medium,26.9,0.75,"safety:low,compliance:low,completeness:critical,operations:low",Minor data quality issues - Monitor and address
+STUDY_14,74.7,Medium,25.3,0.75,"safety:low,compliance:low,completeness:critical,operations:low",Minor data quality issues - Monitor and address
+STUDY_15,73.8,Medium,26.2,0.75,"safety:low,compliance:low,completeness:critical,operations:low",Minor data quality issues - Monitor and address
+STUDY_16,63.5,High,36.5,0.75,"safety:medium,compliance:low,completeness:critical,operations:medium",Significant data quality issues - Review and remediation needed
+STUDY_17,63.5,High,36.5,0.75,"safety:medium,compliance:low,completeness:critical,operations:medium",Significant data quality issues - Review and remediation needed
+STUDY_18,70.5,Medium,29.5,0.75,"safety:low,compliance:low,completeness:critical,operations:medium",Minor data quality issues - Monitor and address
+STUDY_19,70.5,Medium,29.5,0.75,"safety:low,compliance:low,completeness:critical,operations:medium",Minor data quality issues - Monitor and address
+STUDY_20,71.8,Medium,28.2,0.75,"safety:low,compliance:low,completeness:critical,operations:medium",Minor data quality issues - Monitor and address
+STUDY_21,70.5,Medium,29.5,0.75,"safety:low,compliance:low,completeness:critical,operations:medium",Minor data quality issues - Monitor and address
+STUDY_22,88.5,Low,11.5,0.75,"safety:medium,compliance:low,completeness:low,operations:medium",Data quality acceptable - Continue monitoring
+STUDY_23,70.5,Medium,29.5,0.75,"safety:low,compliance:low,completeness:critical,operations:medium",Minor data quality issues - Monitor and address
+STUDY_24,63.5,High,36.5,0.75,"safety:medium,compliance:low,completeness:critical,operations:medium",Significant data quality issues - Review and remediation needed
+STUDY_25,65.7,High,34.3,0.75,"safety:medium,compliance:low,completeness:critical,operations:medium",Minor data quality issues - Monitor and address

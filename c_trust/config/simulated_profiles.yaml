@@ -1,0 +1,399 @@
+# Simulated Study Profiles for C-TRUST Testing
+# ============================================
+# These profiles define studies with known quality issues to validate
+# that the DQI system correctly identifies low-quality data.
+#
+# Expected Behavior: All simulated studies should produce DQI < 65
+
+SIM-001:
+  name: "Critical Safety Issues Study"
+  description: "Study with severe safety concerns - multiple fatal SAEs and protocol deviations"
+  target_dqi: 45
+  issues:
+    safety:
+      - fatal_sae_count: 5
+      - sae_review_backlog_days: 45
+      - protocol_deviations_count: 25
+      - serious_protocol_deviations: 8
+    
+    completeness:
+      - missing_visits_pct: 15
+      - missing_pages_pct: 20
+      - visit_completion_rate: 75
+    
+    query_quality:
+      - open_queries_count: 150
+      - query_aging_days: 60
+      - query_resolution_rate: 40
+    
+    coding:
+      - uncoded_terms_pct: 25
+      - coding_backlog_days: 30
+      - meddra_coding_quality: 60
+    
+    edc_quality:
+      - edc_conformance_rate: 70
+      - data_entry_errors_count: 80
+      - edc_system_uptime: 92
+    
+    temporal_drift:
+      - enrollment_velocity: 0.5
+      - visit_schedule_adherence: 65
+      - data_entry_lag_days: 25
+    
+    stability:
+      - data_consistency_score: 65
+      - amendment_count: 8
+      - site_activation_rate: 60
+
+  enrollment:
+    actual: 45
+    target: 150
+    rate_pct: 30.0
+
+SIM-002:
+  name: "High Missing Data Study"
+  description: "Study with severe data completeness issues"
+  target_dqi: 50
+  issues:
+    safety:
+      - fatal_sae_count: 1
+      - sae_review_backlog_days: 15
+      - protocol_deviations_count: 10
+      - serious_protocol_deviations: 2
+    
+    completeness:
+      - missing_visits_pct: 40
+      - missing_pages_pct: 45
+      - visit_completion_rate: 50
+    
+    query_quality:
+      - open_queries_count: 200
+      - query_aging_days: 50
+      - query_resolution_rate: 35
+    
+    coding:
+      - uncoded_terms_pct: 30
+      - coding_backlog_days: 40
+      - meddra_coding_quality: 55
+    
+    edc_quality:
+      - edc_conformance_rate: 65
+      - data_entry_errors_count: 100
+      - edc_system_uptime: 90
+    
+    temporal_drift:
+      - enrollment_velocity: 0.6
+      - visit_schedule_adherence: 60
+      - data_entry_lag_days: 30
+    
+    stability:
+      - data_consistency_score: 60
+      - amendment_count: 6
+      - site_activation_rate: 65
+
+  enrollment:
+    actual: 60
+    target: 200
+    rate_pct: 30.0
+
+SIM-003:
+  name: "Query Overload Study"
+  description: "Study overwhelmed with unresolved queries"
+  target_dqi: 55
+  issues:
+    safety:
+      - fatal_sae_count: 0
+      - sae_review_backlog_days: 10
+      - protocol_deviations_count: 8
+      - serious_protocol_deviations: 1
+    
+    completeness:
+      - missing_visits_pct: 12
+      - missing_pages_pct: 15
+      - visit_completion_rate: 80
+    
+    query_quality:
+      - open_queries_count: 350
+      - query_aging_days: 70
+      - query_resolution_rate: 25
+    
+    coding:
+      - uncoded_terms_pct: 20
+      - coding_backlog_days: 25
+      - meddra_coding_quality: 65
+    
+    edc_quality:
+      - edc_conformance_rate: 75
+      - data_entry_errors_count: 60
+      - edc_system_uptime: 94
+    
+    temporal_drift:
+      - enrollment_velocity: 0.7
+      - visit_schedule_adherence: 70
+      - data_entry_lag_days: 20
+    
+    stability:
+      - data_consistency_score: 70
+      - amendment_count: 5
+      - site_activation_rate: 70
+
+  enrollment:
+    actual: 100
+    target: 180
+    rate_pct: 55.6
+
+SIM-004:
+  name: "Protocol Deviations Study"
+  description: "Study with excessive protocol violations"
+  target_dqi: 52
+  issues:
+    safety:
+      - fatal_sae_count: 2
+      - sae_review_backlog_days: 20
+      - protocol_deviations_count: 35
+      - serious_protocol_deviations: 12
+    
+    completeness:
+      - missing_visits_pct: 18
+      - missing_pages_pct: 22
+      - visit_completion_rate: 72
+    
+    query_quality:
+      - open_queries_count: 120
+      - query_aging_days: 40
+      - query_resolution_rate: 45
+    
+    coding:
+      - uncoded_terms_pct: 18
+      - coding_backlog_days: 20
+      - meddra_coding_quality: 68
+    
+    edc_quality:
+      - edc_conformance_rate: 72
+      - data_entry_errors_count: 70
+      - edc_system_uptime: 93
+    
+    temporal_drift:
+      - enrollment_velocity: 0.65
+      - visit_schedule_adherence: 68
+      - data_entry_lag_days: 22
+    
+    stability:
+      - data_consistency_score: 68
+      - amendment_count: 7
+      - site_activation_rate: 65
+
+  enrollment:
+    actual: 80
+    target: 160
+    rate_pct: 50.0
+
+SIM-005:
+  name: "Moderate Issues Study"
+  description: "Study with moderate quality issues across multiple dimensions"
+  target_dqi: 60
+  issues:
+    safety:
+      - fatal_sae_count: 1
+      - sae_review_backlog_days: 12
+      - protocol_deviations_count: 12
+      - serious_protocol_deviations: 3
+    
+    completeness:
+      - missing_visits_pct: 10
+      - missing_pages_pct: 12
+      - visit_completion_rate: 82
+    
+    query_quality:
+      - open_queries_count: 100
+      - query_aging_days: 35
+      - query_resolution_rate: 50
+    
+    coding:
+      - uncoded_terms_pct: 15
+      - coding_backlog_days: 18
+      - meddra_coding_quality: 72
+    
+    edc_quality:
+      - edc_conformance_rate: 78
+      - data_entry_errors_count: 50
+      - edc_system_uptime: 95
+    
+    temporal_drift:
+      - enrollment_velocity: 0.75
+      - visit_schedule_adherence: 75
+      - data_entry_lag_days: 18
+    
+    stability:
+      - data_consistency_score: 75
+      - amendment_count: 4
+      - site_activation_rate: 75
+
+  enrollment:
+    actual: 120
+    target: 180
+    rate_pct: 66.7
+
+SIM-006:
+  name: "Minor Issues Study"
+  description: "Study with minor quality issues - borderline acceptable"
+  target_dqi: 64
+  issues:
+    safety:
+      - fatal_sae_count: 0
+      - sae_review_backlog_days: 8
+      - protocol_deviations_count: 8
+      - serious_protocol_deviations: 1
+    
+    completeness:
+      - missing_visits_pct: 8
+      - missing_pages_pct: 10
+      - visit_completion_rate: 85
+    
+    query_quality:
+      - open_queries_count: 80
+      - query_aging_days: 30
+      - query_resolution_rate: 55
+    
+    coding:
+      - uncoded_terms_pct: 12
+      - coding_backlog_days: 15
+      - meddra_coding_quality: 75
+    
+    edc_quality:
+      - edc_conformance_rate: 80
+      - data_entry_errors_count: 40
+      - edc_system_uptime: 96
+    
+    temporal_drift:
+      - enrollment_velocity: 0.8
+      - visit_schedule_adherence: 78
+      - data_entry_lag_days: 15
+    
+    stability:
+      - data_consistency_score: 78
+      - amendment_count: 3
+      - site_activation_rate: 78
+
+  enrollment:
+    actual: 140
+    target: 180
+    rate_pct: 77.8
+
+SIM-007:
+  name: "Catastrophic Failure Study"
+  description: "Study with catastrophic failures across all quality dimensions - should score DQI ~25"
+  target_dqi: 25
+  issues:
+    safety:
+      - fatal_sae_count: 12
+      - sae_review_backlog_days: 90
+      - protocol_deviations_count: 60
+      - serious_protocol_deviations: 25
+    
+    completeness:
+      - missing_visits_pct: 65
+      - missing_pages_pct: 70
+      - visit_completion_rate: 30
+    
+    query_quality:
+      - open_queries_count: 500
+      - query_aging_days: 120
+      - query_resolution_rate: 15
+    
+    coding:
+      - uncoded_terms_pct: 55
+      - coding_backlog_days: 80
+      - meddra_coding_quality: 35
+    
+    edc_quality:
+      - edc_conformance_rate: 45
+      - data_entry_errors_count: 200
+      - edc_system_uptime: 75
+    
+    temporal_drift:
+      - enrollment_velocity: 0.2
+      - visit_schedule_adherence: 35
+      - data_entry_lag_days: 60
+    
+    stability:
+      - data_consistency_score: 40
+      - amendment_count: 15
+      - site_activation_rate: 30
+
+  enrollment:
+    actual: 25
+    target: 200
+    rate_pct: 12.5
+
+SIM-008:
+  name: "Critical Data Integrity Study"
+  description: "Study with severe data integrity and safety issues - should score DQI ~20"
+  target_dqi: 20
+  issues:
+    safety:
+      - fatal_sae_count: 18
+      - sae_review_backlog_days: 120
+      - protocol_deviations_count: 80
+      - serious_protocol_deviations: 35
+    
+    completeness:
+      - missing_visits_pct: 75
+      - missing_pages_pct: 80
+      - visit_completion_rate: 20
+    
+    query_quality:
+      - open_queries_count: 650
+      - query_aging_days: 150
+      - query_resolution_rate: 10
+    
+    coding:
+      - uncoded_terms_pct: 70
+      - coding_backlog_days: 100
+      - meddra_coding_quality: 25
+    
+    edc_quality:
+      - edc_conformance_rate: 35
+      - data_entry_errors_count: 300
+      - edc_system_uptime: 65
+    
+    temporal_drift:
+      - enrollment_velocity: 0.15
+      - visit_schedule_adherence: 25
+      - data_entry_lag_days: 90
+    
+    stability:
+      - data_consistency_score: 30
+      - amendment_count: 20
+      - site_activation_rate: 20
+
+  enrollment:
+    actual: 15
+    target: 250
+    rate_pct: 6.0
+
+# Metadata
+metadata:
+  version: "1.1"
+  created: "2026-01-27"
+  updated: "2026-01-30"
+  purpose: "Validate DQI system correctly identifies low-quality data across full quality spectrum"
+  expected_behavior: "Simulated studies should produce DQI scores matching their target_dqi"
+  validation_criteria:
+    - "SIM-001 to SIM-006: DQI 45-64 (moderate to severe issues)"
+    - "SIM-007: DQI ~25 (catastrophic failure)"
+    - "SIM-008: DQI ~20 (critical data integrity issues)"
+    - "DQI band correctly assigned [RED, ORANGE, AMBER]"
+    - "Agent signals detect all injected issues"
+    - "Real NEST data produces higher average DQI than worst simulated studies"
+  
+  study_summary:
+    SIM-001: "Critical safety issues (target DQI 45)"
+    SIM-002: "High missing data (target DQI 50)"
+    SIM-003: "Query overload (target DQI 55)"
+    SIM-004: "Protocol deviations (target DQI 52)"
+    SIM-005: "Moderate issues (target DQI 60)"
+    SIM-006: "Minor issues (target DQI 64)"
+    SIM-007: "Catastrophic failure (target DQI 25)"
+    SIM-008: "Critical data integrity (target DQI 20)"

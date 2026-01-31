@@ -1,0 +1,66 @@
+_version: 1.0.0
+agent_configs:
+  coding_readiness:
+    abstention_threshold: 0.3
+    enabled: true
+    name: Coding Readiness
+    weight: 1.2
+  cross_evidence:
+    abstention_threshold: 0.3
+    enabled: true
+    name: Cross Evidence
+    weight: 1.0
+  data_completeness:
+    abstention_threshold: 0.3
+    enabled: true
+    name: Data Completeness
+    weight: 1.5
+  query_quality:
+    abstention_threshold: 0.3
+    enabled: true
+    name: Query Quality
+    weight: 1.5
+  safety_compliance:
+    abstention_threshold: 0.3
+    enabled: true
+    name: Safety & Compliance
+    weight: 3.0
+  stability:
+    abstention_threshold: 0.3
+    enabled: true
+    name: Stability
+    weight: -1.5
+  temporal_drift:
+    abstention_threshold: 0.3
+    enabled: true
+    name: Temporal Drift
+    weight: 1.2
+batch_size: 1000
+dashboard_host: localhost
+dashboard_port: 8501
+database_url: sqlite:///c_trust.db
+dqi_config:
+  bands:
+    AMBER:
+      max: 84
+      min: 65
+    GREEN:
+      max: 100
+      min: 85
+    ORANGE:
+      max: 64
+      min: 40
+    RED:
+      max: 39
+      min: 0
+  weights:
+    completeness: 0.2
+    compliance: 0.25
+    operations: 0.15
+    safety: 0.35
+guardian_enabled: true
+guardian_sensitivity: 0.1
+log_file: logs/c_trust.log
+log_level: INFO
+max_concurrent_jobs: 4
+processing_timeout_minutes: 30
