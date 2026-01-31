@@ -111,7 +111,7 @@ export function useSystemStatus(options?: {
         staleEntities: metricsQuery.data.system.stale_entities,
         criticalEvents: guardianQuery.data?.events?.filter(e => e.severity === 'critical').length ?? 0,
         warningEvents: guardianQuery.data?.events?.filter(e => e.severity === 'warning').length ?? 0,
-        uptimeHours: 24, // Would come from backend in real implementation
+        uptimeHours: 24, 
         dataFreshnessScore: metricsQuery.data.system.data_freshness_score,
     } : null;
 
