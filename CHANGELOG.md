@@ -37,10 +37,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Data ingestion pipeline for NEST 2.0 Excel files
 - Feature extraction system (50+ features)
 - Export functionality for reports
-- LLM integration with OpenAI GPT-4
+- LLM integration with GroqAi LLama3
 - Caching system for performance optimization
 - Error handling and logging
-- API documentation with Swagger/OpenAPI
+- API documentation with Swagger/GroqAPI
 
 ### Features
 - Multi-agent architecture for comprehensive analysis
@@ -64,7 +64,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - TailwindCSS for styling
 - Recharts for data visualization
 - Pandas for data processing
-- OpenAI API integration
+- GroqAPI integration
 - Property-based testing with Hypothesis
 - Comprehensive error handling
 - Modular architecture
